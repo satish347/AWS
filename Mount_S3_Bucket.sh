@@ -61,4 +61,4 @@ else
      done
   fi
   
-  
+# if you want to identify the error's add this "-o dbglevel=info -f -o curldbg" to the s3fs command.
