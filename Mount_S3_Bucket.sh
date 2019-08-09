@@ -16,7 +16,7 @@ if [[ -e /usr/bin/s3fs ]]; then
           echo $key_id:$access_key > ${HOME}/.passwd-s3fs
           sudo chmod 600 ${HOME}/.passwd-s3fs
           read -p "Enter the directory name to mount s3 : " direc
-          sudo mkdir /$direc
+          mkdir $direc
           read -p "Enter the s3 bucket name : " s3_name
           read -p "Enter the region name : " region
           s3fs $s3_name /$direc -o passwd_file=${HOME}/.passwd-s3fs -o url=https://s3-$region.amazonaws.com
@@ -46,7 +46,7 @@ else
           echo $key_id:$access_key > ${HOME}/.passwd-s3fs
           sudo chmod 600 ${HOME}/.passwd-s3fs
           read -p "Enter the directory name to mount s3 : " direc
-          sudo mkdir /$direc
+          mkdir $direc
           read -p "Enter the s3 bucket name : " s3_name
           read -p "Enter the region name : " region
           s3fs $s3_name /$direc -o passwd_file=${HOME}/.passwd-s3fs -o url=https://s3-$region.amazonaws.com
